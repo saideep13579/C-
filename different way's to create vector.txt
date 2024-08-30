@@ -1,0 +1,29 @@
+#include<iostream>
+#include<vector>
+using namespace std;
+
+template <class T>
+void display(vector<T> &v)
+{
+    cout<<"Displaying the vector"<<endl;
+    for(int i=0; i<v.size(); i++)
+    {
+        cout<<v.at(i)<<" ";
+       // cout<<v[i]<<" ";      //we can use at() or this method
+    }
+    cout<<endl;
+}
+int main()
+{
+    //we have different way's to create the vector.
+    vector<int>vec1;            //1. zero element vector
+    display(vec1);
+    vector < char >vec2 (4);	//2. 4-element character vector
+    vec2.push_back('R');
+    display (vec2);
+    vector < char >vec3 (vec2);	//3. 4-element character vector from vec2
+    display (vec3);
+    vector < int >vec4 (6, 3);	//4. 6-element vector of 3s
+    display (vec4);
+    return 0;
+}
