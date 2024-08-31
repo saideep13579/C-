@@ -1,0 +1,16 @@
+#include<iostream>
+#include<functional>
+#include<algorithm>
+using namespace std;
+
+int main()
+{
+    int arr[] = {1,52,65,8,3};
+    //sort(arr, arr+5);  //this is for the acending order
+    sort(arr, arr+5, greater<int>());         // this is for the decending order
+    for(int i = 0; i < 5; i++)
+    {
+        cout<<arr[i]<<endl;
+    }
+    return 0;
+}
