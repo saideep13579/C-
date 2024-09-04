@@ -1,0 +1,51 @@
+#include<iostream>
+#include<map>
+#include<string>
+using namespace std;
+
+int main()
+{
+    string name;
+    map<string , int> marksMap;
+    marksMap["saideep"] = 99;
+    marksMap.insert({{"tushar",101},{"sandesh",100},{"shuvbham",99}});
+    marksMap.insert({"karan",100});
+    
+    map<string,int> :: iterator iter;
+    
+    // this is used to display whole the map
+    cout<<"your map is:"<<endl;
+    for(iter = marksMap.begin(); iter != marksMap.end(); iter++)
+    {
+        cout<<(*iter).first<<" "<<iter->second<<endl;  // we can use given two method's for the pointing.
+    }
+    
+    cout<<"enter the name of the student: "<<endl;
+    cin>>name;
+    
+    //this check's for the all first of the map and print it.
+    // for(iter = marksMap.begin(); iter != marksMap.end(); iter++)
+    // {
+    //     if(name==((*iter).first))
+    //     {
+    //         cout<<name<<" : "<<(*iter).second<<endl;
+    //     }
+    //     else
+    //     {
+    //         cout<<"invalide name of the student."<<endl;
+    //     }
+    // }
+    
+    
+    iter = marksMap.begin();
+    iter = marksMap.find(name);
+    if(iter != marksMap.end())
+    {
+        cout<<name<<" : "<<iter->second<<endl;
+    }
+    else
+    {
+        cout<<"invalide name"<<endl;
+    }
+    return 0;
+}
